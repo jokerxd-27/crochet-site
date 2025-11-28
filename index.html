@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover exquisite handcrafted crochet items – from cozy blankets to charming amigurumi. Shop unique, artisanal creations made with love and passion.">
+    <meta name="keywords" content="crochet, handmade, unique gifts, artisanal, blankets, amigurumi, scarves, hats, home decor, shop crochet, buy handmade">
+    <title>Crochet – Handcrafted Wonders for You</title>
+
+    <!-- Preconnect for Pollinations AI -->
+    <link rel="preconnect" href="https://image.pollinations.ai">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #A0522D; /* Sienna */
+            --secondary-color: #F4A460; /* SandyBrown */
+            --accent-color: #D2B48C; /* Tan */
+            --background-light: #FFF8E1; /* Creamy White */
+            --text-dark: #333333;
+            --text-light: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--background-light);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+        }
+
+        /* Custom scrollbar for a premium feel */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-color);
+        }
+
+        .card-bg-glass {
+            background-color: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .nav-link-hover {
+            position: relative;
+        }
+        .nav-link-hover::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: width .3s ease-out;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+
+        .nav-link-hover:hover::after {
+            width: 100%;
+        }
+
+        /* Custom Tailwind Configuration for this single file */
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        /* Custom utility classes using CSS variables */
+        .text-primary-color { color: var(--primary-color); }
+        .bg-primary-color { background-color: var(--primary-color); }
+        .text-secondary-color { color: var(--secondary-color); }
+        .bg-secondary-color { background-color: var(--secondary-color); }
+        .text-accent-color { color: var(--accent-color); }
+        .bg-accent-color { background-color: var(--accent-color); }
+        .bg-background-light { background-color: var(--background-light); }
+        .text-text-dark { color: var(--text-dark); }
+
+        /* Custom animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0; /* Start hidden */
+        }
+        .animate-fade-in-up.delay-200 { animation-delay: 0.2s; }
+        .animate-fade-in-up.delay-400 { animation-delay: 0.4s; }
+    </style>
+</head>
+<body class="antialiased bg-background-light">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 py-4 card-bg-glass shadow-md">
+        <nav class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#home" class="text-3xl font-bold text-primary-color hover:text-secondary-color transition duration-300">
+                Crochet<span class="text-secondary-color text-xl">.io</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#home" class="text-lg font-medium text-text-dark hover:text-secondary-color transition duration-300 nav-link-hover">Home</a></li>
+                <li><a href="#shop" class="text-lg font-medium text-text-dark hover:text-secondary-color transition duration-300 nav-link-hover">Shop</a></li>
+                <li><a href="#categories" class="text-lg font-medium text-text-dark hover:text-secondary-color transition duration-300 nav-link-hover">Categories</a></li>
+                <li><a href="#about" class="text-lg font-medium text-text-dark hover:text-secondary-color transition duration-300 nav-link-hover">About</a></li>
+                <li><a href="#contact" class="text-lg font-medium text-text-dark hover:text-secondary-color transition duration-300 nav-link-hover">Contact</a></li>
+            </ul>
+
+            <!-- Icons -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#" aria-label="Search" class="text-xl text-text-dark hover:text-secondary-color transition duration-300"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="#" aria-label="User Account" class="text-xl text-text-dark hover:text-secondary-color transition duration-300"><i class="fa-solid fa-user"></i></a>
+                <a href="#" aria-label="Shopping Cart" class="relative text-xl text-text-dark hover:text-secondary-color transition duration-300">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="absolute -top-2 -right-2 bg-primary-color text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" aria-label="Open mobile menu" class="text-2xl text-text-dark hover:text-secondary-color focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-background-light transform translate-x-full md:hidden transition-transform duration-300 ease-in-out z-40">
+            <div class="flex justify-end p-6">
+                <button id="close-mobile-menu" aria-label="Close mobile menu" class="text-3xl text-primary-color hover:text-secondary-color focus:outline-none">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <ul class="flex flex-col items-center space-y-6 text-2xl font-semibold mt-10">
+                <li><a href="#home" class="text-text-dark hover:text-secondary-color transition duration-300">Home</a></li>
+                <li><a href="#shop" class="text-text-dark hover:text-secondary-color transition duration-300">Shop</a></li>
+                <li><a href="#categories" class="text-text-dark hover:text-secondary-color transition duration-300">Categories</a></li>
+                <li><a href="#about" class="text-text-dark hover:text-secondary-color transition duration-300">About</a></li>
+                <li><a href="#contact" class="text-text-dark hover:text-secondary-color transition duration-300">Contact</a></li>
+                <li class="flex space-x-6 mt-8">
+                    <a href="#" aria-label="Search" class="text-3xl text-text-dark hover:text-secondary-color transition duration-300"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <a href="#" aria-label="User Account" class="text-3xl text-text-dark hover:text-secondary-color transition duration-300"><i class="fa-solid fa-user"></i></a>
+                    <a href="#" aria-label="Shopping Cart" class="relative text-3xl text-text-dark hover:text-secondary-color transition duration-300">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="absolute -top-2 -right-2 bg-primary-color text-white text-sm rounded-full h-7 w-7 flex items-center justify-center">3</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative bg-cover bg-center h-screen flex items-center justify-center text-center px-6"
+            style="background-image: url('https://image.pollinations.ai/prompt/cozy%20handmade%20crochet%20blanket%20and%20yarn%20balls%20in%20warm%20light,%20hygge,%20macro%20shot?width=1920&height=1080&nologo=true');">
+            <div class="absolute inset-0 bg-black opacity-30"></div>
+            <div class="relative z-10 text-white max-w-4xl mx-auto backdrop-blur-sm bg-black bg-opacity-20 p-8 rounded-lg shadow-xl">
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6 animate-fade-in-up">
+                    Crafted with Care, Woven with Love
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 font-light leading-relaxed animate-fade-in-up delay-200">
+                    Discover the warmth and charm of unique, handmade crochet creations. From cozy essentials to delightful decor,
+                    each stitch tells a story of passion and artistry.
+                </p>
+                <div class="space-x-4 animate-fade-in-up delay-400">
+                    <a href="#shop" class="inline-block bg-primary-color hover:bg-secondary-color text-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-lg transform hover:scale-105">
+                        Shop Our Collection
+                    </a>
+                    <a href="#about" class="inline-block border-2 border-white hover:border-secondary-color text-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-lg transform hover:scale-105">
+                        Our Story
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section id="shop" class="py-20 bg-background-light">
+            <div class="container mx-auto px-6">
+                <h2 class="text-5xl font-bold text-center mb-16 text-primary-color">Featured Wonders</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Product Card 1 -->
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                        <img src="https://image.pollinations.ai/prompt/cute%20crochet%20amigurumi%20toy%20rabbit%20on%20a%20minimalist%20background?width=600&height=600&nologo=true"
+                             alt="Crochet Amigurumi Rabbit Toy"
+                             class="w-full h-72 object-cover object-center transform group-hover:scale-105 transition-transform duration-300"
+                             loading="lazy" decoding="async">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-primary-color group-hover:text-secondary-color transition-colors duration-300">Whimsical Bunny Amigurumi</h3>
+                            <p class="text-gray-600 mb-4">A charming, hand-stitched bunny friend for endless cuddles.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-3xl font-bold text-secondary-color">$39.99</span>
+                                <button class="bg-primary-color hover:bg-secondary-color text-white font-medium py-2 px-5 rounded-full transition duration-300 transform hover:scale-105">
+                                    <i class="fa-solid fa-cart-shopping mr-2"></i>Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                        <img src="https://image.pollinations.ai/prompt/elegant%20handmade%20crochet%20scarf%20draped%20on%20a%20mannequin%20in%20a%20boutique%20setting?width=600&height=600&nologo=true"
+                             alt="Elegant Crochet Scarf"
+                             class="w-full h-72 object-cover object-center transform group-hover:scale-105 transition-transform duration-300"
+                             loading="lazy" decoding="async">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-primary-color group-hover:text-secondary-color transition-colors duration-300">Luxurious Autumn Scarf</h3>
+                            <p class="text-gray-600 mb-4">Stay warm and stylish with this exquisitely designed autumn scarf.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-3xl font-bold text-secondary-color">$64.50</span>
+                                <button class="bg-primary-color hover:bg-secondary-color text-white font-medium py-2 px-5 rounded-full transition duration-300 transform hover:scale-105">
+                                    <i class="fa-solid fa-cart-shopping mr-2"></i>Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                        <img src="https://image.pollinations.ai/prompt/soft%20chunky%20crochet%20throw%20blanket%20on%20a%20sofa%20with%20warm%20light?width=600&height=600&nologo=true"
+                             alt="Chunky Crochet Throw Blanket"
+                             class="w-full h-72 object-cover object-center transform group-hover:scale-105 transition-transform duration-300"
+                             loading="lazy" decoding="async">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-primary-color group-hover:text-secondary-color transition-colors duration-300">Cozy Hand-Knitted Throw</h3>
+                            <p class="text-gray-600 mb-4">Wrap yourself in comfort with our incredibly soft, chunky throw.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-3xl font-bold text-secondary-color">$129.00</span>
+                                <button class="bg-primary-color hover:bg-secondary-color text-white font-medium py-2 px-5 rounded-full transition duration-300 transform hover:scale-105">
+                                    <i class="fa-solid fa-cart-shopping mr-2"></i>Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 4 -->
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                        <img src="https://image.pollinations.ai/prompt/stylish%20crochet%20beanie%20hat%20on%20a%20wooden%20surface?width=600&height=600&nologo=true"
+                             alt="Stylish Crochet Beanie Hat"
+                             class="w-full h-72 object-cover object-center transform group-hover:scale-105 transition-transform duration-300"
+                             loading="lazy" decoding="async">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-primary-color group-hover:text-secondary-color transition-colors duration-300">Artisan Boho Beanie</h3>
+                            <p class="text-gray-600 mb-4">A perfect blend of bohemian style and cozy warmth for any season.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-3xl font-bold text-secondary-color">$28.99</span>
+                                <button class="bg-primary-color hover:bg-secondary-color text-white font-medium py-2 px-5 rounded-full transition duration-300 transform hover:scale-105">
+                                    <i class="fa-solid fa-cart-shopping mr-2"></i>Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 5 -->
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                        <img src="https://image.pollinations.ai/prompt/set%20of%20colorful%20crochet%20coasters%20on%20a%20wooden%20table?width=600&height=600&nologo=true"
+                             alt="Colorful Crochet Coasters Set"
+                             class="w-full h-72 object-cover object-center transform group-hover:scale-105 transition-transform duration-300"
+                             loading="lazy" decoding="async">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-primary-color group-hover:text-secondary-color transition-colors duration-300">Vibrant Coaster Set</h3>
+                            <p class="text-gray-600 mb-4">Add a splash of color to your home with these unique coasters.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-3xl font-bold text-secondary-color">$22.00</span>
+                                <button class="bg-primary-color hover:bg-secondary-color text-white font-medium py-2 px-5 rounded-full transition duration-300 transform hover:scale-105">
+                                    <i class="fa-solid fa-cart-shopping mr-2"></i>Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 6 -->
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                        <img src="https://image.pollinations.ai/prompt/fashionable%20crochet%20tote%20bag%20with%20boho%20style?width=600&height=600&nologo=true"
+                             alt="Fashionable Crochet Tote Bag"
+                             class="w-full h-72 object-cover object-center transform group-hover:scale-105 transition-transform duration-300"
+                             loading="lazy" decoding="async">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-primary-color group-hover:text-secondary-color transition-colors duration-300">Boho Chic Tote Bag</h3>
+                            <p class="text-gray-600 mb-4">Carry your essentials in style with this beautifully crafted tote.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-3xl font-bold text-secondary-color">$75.00</span>
+                                <button class="bg-primary-color hover:bg-secondary-color text-white font-medium py-2 px-5 rounded-full transition duration-300 transform hover:scale-105">
+                                    <i class="fa-solid fa-cart-shopping mr-2"></i>Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-16">
+                    <a href="#" class="inline-block bg-accent-color hover:bg-secondary-color text-white font-semibold py-4 px-10 rounded-full transition duration-300 shadow-lg transform hover:scale-105 text-xl">
+                        View All Products
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categories" class="py-20 bg-primary-color text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-5xl font-bold mb-16 text-white">Explore Our Collections</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <a href="#" class="group block relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                        <img src="https://image.pollinations.ai/prompt/variety%20of%20crochet%20clothing%20items%20like%20sweaters%20and%20cardigans,%20fashion%20photography?width=400&height=300&nologo=true"
+                             alt="Crochet Apparel"
+                             class="w-full h-48 object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                             loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 transition-opacity duration-300 flex items-center justify-center">
+                            <h3 class="text-3xl font-bold text-white relative z-10">Apparel</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="group block relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                        <img src="https://image.pollinations.ai/prompt/cute%20crochet%20amigurumi%20animals%20collection,%20toys?width=400&height=300&nologo=true"
+                             alt="Crochet Amigurumi Toys"
+                             class="w-full h-48 object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                             loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 transition-opacity duration-300 flex items-center justify-center">
+                            <h3 class="text-3xl font-bold text-white relative z-10">Amigurumi</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="group block relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                        <img src="https://image.pollinations.ai/prompt/beautiful%20crochet%20home%20decor%20items%20like%20cushions%20and%20plant%20hangers,%20interior%20design?width=400&height=300&nologo=true"
+                             alt="Crochet Home Decor"
+                             class="w-full h-48 object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                             loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 transition-opacity duration-300 flex items-center justify-center">
+                            <h3 class="text-3xl font-bold text-white relative z-10">Home Decor</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="group block relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                        <img src="https://image.pollinations.ai/prompt/crochet%20accessories%20like%20bags,%20jewelry%20and%20keychains,%20fashion%20details?width=400&height=300&nologo=true"
+                             alt="Crochet Accessories"
+                             class="w-full h-48 object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                             loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 transition-opacity duration-300 flex items-center justify-center">
+                            <h3 class="text-3xl font-bold text-white relative z-10">Accessories</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-20 bg-background-light">
+            <div class="container mx-auto px-6">
+                <h2 class="text-5xl font-bold text-center mb-16 text-primary-color">Our Passion, Your Comfort</h2>
+
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+                    <div class="lg:w-1/2">
+                        <img src="https://image.pollinations.ai/prompt/hands%20intricately%20crocheting%20with%20yarn%20and%20hook,%20soft%20focus,%20craftsmanship?width=800&height=600&nologo=true"
+                             alt="Hands crocheting"
+                             class="rounded-xl shadow-xl w-full h-auto object-cover"
+                             loading="lazy" decoding="async">
+                    </div>
+                    <div class="lg:w-1/2 text-center lg:text-left">
+                        <h3 class="text-4xl font-semibold mb-6 text-secondary-color">The Art of Handmade</h3>
+                        <p class="text-lg leading-relaxed mb-6">
+                            At Crochet.io, we believe in the timeless beauty and unique charm of handmade items.
+                            Each piece is meticulously crafted by skilled artisans, weaving passion, tradition, and contemporary design into every stitch.
+                            We use only the finest yarns and materials to ensure that every creation is not just beautiful, but also durable and incredibly soft.
+                        </p>
+                        <p class="text-lg leading-relaxed mb-6">
+                            Our journey began with a simple hook and a skein of yarn, a desire to create something tangible and heartfelt.
+                            Today, we offer a curated collection that brings warmth, style, and a touch of artisanal elegance to your home and wardrobe.
+                            When you choose Crochet.io, you're not just buying a product; you're investing in a piece of art, made with love.
+                        </p>
+                        <a href="#contact" class="inline-block bg-primary-color hover:bg-secondary-color text-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-lg transform hover:scale-105">
+                            Meet Our Makers
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-20 bg-gradient-to-br from-primary-color to-secondary-color text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-5xl font-bold mb-16 text-white">What Our Customers Say</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white text-gray-800 rounded-xl shadow-xl p-8 transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://image.pollinations.ai/prompt/portrait%20of%20a%20smiling%20young%20woman%20with%20natural%20light?width=100&height=100&nologo=true"
+                             alt="Customer Emily R."
+                             class="w-24 h-24 rounded-full mx-auto mb-6 object-cover border-4 border-accent-color"
+                             loading="lazy" decoding="async">
+                        <p class="text-lg italic mb-6">
+                            "Absolutely stunning craftsmanship! The blanket I ordered is even more beautiful in person and incredibly soft. It's truly a cherished item in my home now."
+                        </p>
+                        <h4 class="text-xl font-semibold text-primary-color">- Emily R.</h4>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white text-gray-800 rounded-xl shadow-xl p-8 transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://image.pollinations.ai/prompt/portrait%20of%20a%20happy%20middle-aged%20man%20outdoors?width=100&height=100&nologo=true"
+                             alt="Customer David L."
+                             class="w-24 h-24 rounded-full mx-auto mb-6 object-cover border-4 border-accent-color"
+                             loading="lazy" decoding="async">
+                        <p class="text-lg italic mb-6">
+                            "I bought an amigurumi toy as a gift, and it was a huge hit! The attention to detail is remarkable. You can tell it was made with so much care."
+                        </p>
+                        <h4 class="text-xl font-semibold text-primary-color">- David L.</h4>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="bg-white text-gray-800 rounded-xl shadow-xl p-8 transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://image.pollinations.ai/prompt/portrait%20of%20a%20stylish%20young%20woman%20with%20glasses?width=100&height=100&nologo=true"
+                             alt="Customer Sarah K."
+                             class="w-24 h-24 rounded-full mx-auto mb-6 object-cover border-4 border-accent-color"
+                             loading="lazy" decoding="async">
+                        <p class="text-lg italic mb-6">
+                            "The crochet tote bag is my new favorite accessory. It's not just fashionable but also incredibly sturdy and practical. Highly recommend!"
+                        </p>
+                        <h4 class="text-xl font-semibold text-primary-color">- Sarah K.</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter & CTA Section -->
+        <section class="py-20 bg-background-light">
+            <div class="container mx-auto px-6 text-center max-w-2xl">
+                <h2 class="text-5xl font-bold text-primary-color mb-8">Join Our Crochet Community</h2>
+                <p class="text-xl text-gray-700 mb-10">
+                    Be the first to know about new arrivals, exclusive offers, and behind-the-scenes glimpses of our crafting journey.
+                </p>
+                <form class="flex flex-col md:flex-row gap-4 items-center justify-center">
+                    <input type="email" placeholder="Enter your email address" aria-label="Email address for newsletter"
+                           class="w-full md:w-2/3 p-4 rounded-full border-2 border-accent-color focus:border-secondary-color focus:ring-2 focus:ring-secondary-color transition duration-300 text-lg outline-none shadow-md">
+                    <button type="submit"
+                            class="w-full md:w-1/3 bg-primary-color hover:bg-secondary-color text-white font-semibold py-4 px-8 rounded-full transition duration-300 shadow-lg transform hover:scale-105 text-lg">
+                        Subscribe Now
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-primary-color text-white py-16">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12">
+            <!-- Brand Info -->
+            <div>
+                <a href="#home" class="text-4xl font-bold hover:text-secondary-color transition duration-300 mb-4 block">
+                    Crochet<span class="text-accent-color text-2xl">.io</span>
+                </a>
+                <p class="text-gray-200 leading-relaxed mb-4">
+                    Handcrafted with passion, delivered with love. Your destination for unique crochet artistry.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" aria-label="Facebook" class="text-2xl hover:text-secondary-color transition duration-300"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram" class="text-2xl hover:text-secondary-color transition duration-300"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest" class="text-2xl hover:text-secondary-color transition duration-300"><i class="fa-brands fa-pinterest-p"></i></a>
+                    <a href="#" aria-label="Twitter" class="text-2xl hover:text-secondary-color transition duration-300"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-2xl font-semibold mb-6 text-accent-color">Quick Links</h4>
+                <ul class="space-y-3">
+                    <li><a href="#home" class="hover:text-secondary-color transition duration-300">Home</a></li>
+                    <li><a href="#shop" class="hover:text-secondary-color transition duration-300">Shop</a></li>
+                    <li><a href="#about" class="hover:text-secondary-color transition duration-300">About Us</a></li>
+                    <li><a href="#contact" class="hover:text-secondary-color transition duration-300">Contact</a></li>
+                    <li><a href="#" class="hover:text-secondary-color transition duration-300">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Categories -->
+            <div>
+                <h4 class="text-2xl font-semibold mb-6 text-accent-color">Categories</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="hover:text-secondary-color transition duration-300">Apparel</a></li>
+                    <li><a href="#" class="hover:text-secondary-color transition duration-300">Amigurumi</a></li>
+                    <li><a href="#" class="hover:text-secondary-color transition duration-300">Home Decor</a></li>
+                    <li><a href="#" class="hover:text-secondary-color transition duration-300">Accessories</a></li>
+                    <li><a href="#" class="hover:text-secondary-color transition duration-300">Gift Sets</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <h4 class="text-2xl font-semibold mb-6 text-accent-color">Get in Touch</h4>
+                <p class="flex items-center mb-3"><i class="fa-solid fa-location-dot mr-3 text-secondary-color"></i> 123 Artisan Alley, Craftville, CA 90210</p>
+                <p class="flex items-center mb-3"><i class="fa-solid fa-phone mr-3 text-secondary-color"></i> +1 (555) 123-4567</p>
+                <p class="flex items-center mb-3"><i class="fa-solid fa-envelope mr-3 text-secondary-color"></i> info@crochet.io</p>
+                <p class="flex items-center"><i class="fa-solid fa-clock mr-3 text-secondary-color"></i> Mon-Fri: 9 AM - 5 PM PST</p>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-300">
+            <p>&copy; 2023 Crochet.io. All rights reserved. Crafted with <i class="fa-solid fa-heart text-red-500"></i> by Artisans.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        });
+
+        closeMobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+
+        // Close mobile menu when a navigation link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.style.overflow = ''; // Restore scrolling
+            });
+        });
+
+        // Optional: Smooth scroll for internal links (primarily handled by scroll-smooth class on html, but this adds extra reliability for older browsers and closes mobile menu)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+    </script>
+
+    <!-- Analytics Injection -->
+    <script src="https://alphasite.saadsafi.dev/tracker.js" async></script>
+</body>
+</html>
